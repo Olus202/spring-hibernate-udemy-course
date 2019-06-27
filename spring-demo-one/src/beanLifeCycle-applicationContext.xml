@@ -7,7 +7,6 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:property-placeholder location="classpath:sport.properties"/>
     <!-- Define your beans here -->
     <bean id="myLoggerConfig" class="com.luv2code.springdemo.MyLoggerConfig">
     	<property name="rootLoggerLevel" value="FINE" />
@@ -17,26 +16,12 @@
     <bean id="myFortune"
     	class="com.luv2code.springdemo.HappyFortuneService">
     </bean>
-    <bean id="myRandomFortune"
-    	class="com.luv2code.springdemo.RandomFortuneService">
-    </bean>
     <bean id="myCoach"
-    	class="com.luv2code.springdemo.TrackCoach">
-    	<constructor-arg ref="myFortune"/>
-    </bean>
-    
-    <bean id="myClimbingCoach"
-    	class="com.luv2code.springdemo.ClimbingCoach"
-    	scope="prototype">
+    	class="com.luv2code.springdemo.TrackCoach"
+    	init-method="doMyStartupThings"
+    	destroy-method="doMyCleanupThings">
     	
-    	<constructor-arg ref="myRandomFortune" />
-    </bean>
-    
-    <bean id="myCricketCoach"
-    	class="com.luv2code.springdemo.CricketCoach">
-    	<property name="fortuneService" ref="myFortune" />
-    	<property name="emailAddress" value="${foo.email}" />
-    	<property name="team" value="${foo.team}" />
+    	<constructor-arg ref="myFortune"/>
     </bean>
     
 </beans>

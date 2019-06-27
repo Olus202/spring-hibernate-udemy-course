@@ -12,17 +12,11 @@ public class SetterDemoClass {
 		// get Coach bean
 		ClimbingCoach myCoach = context.getBean("myClimbingCoach", ClimbingCoach.class); 
 		
-		// run method for daily
-		System.out.println(myCoach.getDailyWorkout());
+		ClimbingCoach mySecondCoach = context.getBean("myClimbingCoach", ClimbingCoach.class);
 		
-		// run method for fortune
-		System.out.println(myCoach.getDailyFortune());
+		boolean result = (myCoach == mySecondCoach);
 		
-//		//get literal value from email
-//		System.out.println(myCoach.getEmailAddress());
-//		
-//		// get literal value from team
-//		System.out.println(myCoach.getTeam());
+		System.out.println("Result: " + result);
 		
 		// close context
 		context.close();
