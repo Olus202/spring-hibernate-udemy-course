@@ -2,6 +2,16 @@ package com.luv2code.springdemo;
 
 public class ClimbingCoach implements Coach {
 
+	private FortuneService fortuneService;
+	
+	public ClimbingCoach() {
+		
+	}
+	
+	public ClimbingCoach(FortuneService theFortuneService) {
+		fortuneService = theFortuneService;
+	}
+	
 	@Override
 	public String getDailyWorkout() {
 		return "Lets do some 6b+ route";
@@ -9,8 +19,7 @@ public class ClimbingCoach implements Coach {
 
 	@Override
 	public String getDailyFortune() {
-		// TODO Auto-generated method stub
-		return null;
+		return fortuneService.getFortune();
 	}
 
 }

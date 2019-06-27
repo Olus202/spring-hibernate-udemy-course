@@ -10,7 +10,7 @@ public class SetterDemoClass {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		// get Coach bean
-		CricketCoach myCoach = context.getBean("myCricketCoach", CricketCoach.class); 
+		ClimbingCoach myCoach = context.getBean("myClimbingCoach", ClimbingCoach.class); 
 		
 		// run method for daily
 		System.out.println(myCoach.getDailyWorkout());
@@ -18,11 +18,11 @@ public class SetterDemoClass {
 		// run method for fortune
 		System.out.println(myCoach.getDailyFortune());
 		
-		// get literal value from email
-		System.out.println(myCoach.getEmailAddress());
-		
-		// get literal value from team
-		System.out.println(myCoach.getTeam());
+//		//get literal value from email
+//		System.out.println(myCoach.getEmailAddress());
+//		
+//		// get literal value from team
+//		System.out.println(myCoach.getTeam());
 		
 		// close context
 		context.close();
