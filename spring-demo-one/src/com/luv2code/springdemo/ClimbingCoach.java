@@ -7,4 +7,10 @@ public class ClimbingCoach implements Coach {
 		return "Lets do some 6b+ route";
 	}
 
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
