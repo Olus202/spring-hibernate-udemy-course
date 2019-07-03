@@ -10,4 +10,9 @@ public class ClimbingCoach implements Coach {
 		return "Let's try to do this 7a+";
 	}
 
+	@Override
+	public String getDaiyFortune() {
+		return null;
+	}
+
 }
