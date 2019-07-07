@@ -12,14 +12,15 @@ public class AnnotaionDemoApp {
 		// get the bean
 		Coach theCoach = context.getBean("tennisCoach", Coach.class);
 		
-//		Coach theClimbingCoach = context.getBean("climbingCoach", Coach.class);
+		Coach theClimbingCoach = context.getBean("climbingCoach", Coach.class);
 		
 		// print daily workout text
 		System.out.println(theCoach.getDailyWorkout());
-//		System.out.println(theClimbingCoach.getDailyWorkout());
+		System.out.println(theClimbingCoach.getDailyWorkout());
 		
 		// print daily fortune text
 		System.out.println(theCoach.getDaiyFortune());
+		System.out.println(theClimbingCoach.getDaiyFortune());
 		
 		// close the context
 		context.close();
