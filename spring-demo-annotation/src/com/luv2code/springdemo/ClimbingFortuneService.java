@@ -30,9 +30,13 @@ public class ClimbingFortuneService implements FortuneService {
 	private void setupMyData() {
 		 data = new String[4];
 		 data[0] = a;
+		 System.out.println(data[0] + " " + data[1] + " " + data[2] + " " + data[3]);
 		 data[1] = b;
+		 System.out.println(data[0] + " " + data[1] + " " + data[2] + " " + data[3]);
 		 data[2] = c;
+		 System.out.println(data[0] + " " + data[1] + " " + data[2] + " " + data[3]);
 		 data[3] = d;
+		 System.out.println(data[0] + " " + data[1] + " " + data[2] + " " + data[3]);
 	}
 	
 	@Override
