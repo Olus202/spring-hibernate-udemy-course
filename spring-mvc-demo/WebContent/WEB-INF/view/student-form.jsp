@@ -18,12 +18,22 @@
 		<br><br>
 		
 		Country: <form:select path="country">
-					<form:option value="Poland" label="Poland" />
-					<form:option value="USA" label="USA" />
-					<form:option value="Iceland" label="Iceland" />
+					<form:options items="${theCountryOptions}" />				
 				</form:select>	
 				
 		<br><br>	
+		
+		Favorite language: Java <form:radiobutton path="favoriteLanguage" value="Java" />
+							Python <form:radiobutton path="favoriteLanguage" value="Python" />
+							JavaScript <form:radiobutton path="favoriteLanguage" value="JavaScript" />
+		
+		<br><br>
+		
+		Operating systems: Linux <form:checkbox path="operatingSystems" value="Linux" />
+							Mac OS <form:checkbox path="operatingSystems" value="Mac OS" />
+							Windows <form:checkbox path="operatingSystems" value="Windows" />
+		
+		<br><br>
 		
 		<input type="submit" value="Submit" />
 	
