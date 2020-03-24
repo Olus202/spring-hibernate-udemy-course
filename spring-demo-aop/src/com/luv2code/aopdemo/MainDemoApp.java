@@ -17,6 +17,11 @@ public class MainDemoApp {
 		theAccountDAO.addAccount(myAccount, true);
 		theAccountDAO.goToSleep();
 		
+		theAccountDAO.setName("name");
+		theAccountDAO.getName();
+		theAccountDAO.setServiceCode("asd");
+		theAccountDAO.getServiceCode();
+		
 		MembershipDAO theMembershipsDAO = context.getBean("membershipDAO", MembershipDAO.class);
 		
 		theMembershipsDAO.addAccount();
