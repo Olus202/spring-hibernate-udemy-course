@@ -7,14 +7,13 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-@Order(3)
-public class MyDemoLoggingAspect {
-	
-	
-	@Before("com.luv2code.aopdemo.aspect.LuvAopExpressions.forDaoMethodsExcludeGettersAndSetters()")
-	public void beforAddAccountAdvice() {
+@Order(1)
+public class PerformApiAnalyticsAspect {
 		
-		System.out.println("\n ========>>> Executing @Before advice on addAccount(with param)");
+	@Before("com.luv2code.aopdemo.aspect.LuvAopExpressions.forDaoMethodsExcludeGettersAndSetters()")
+	public void performApiAnalytics() {
+		
+		System.out.println("\n ========>>> Perform API Analitics");
 	}
 	
 }
