@@ -14,6 +14,8 @@ public class MainDemoApp {
 		AccountDAO theAccountDAO = context.getBean("accountDAO", AccountDAO.class);
 		
 		Account myAccount = new Account();
+		myAccount.setName("somename");
+		myAccount.setLevel("ddd");
 		theAccountDAO.addAccount(myAccount, true);
 		theAccountDAO.goToSleep();
 		
