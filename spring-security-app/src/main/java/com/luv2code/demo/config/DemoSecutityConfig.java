@@ -25,8 +25,11 @@ public class DemoSecutityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.authorizeRequests().anyRequest().authenticated().and().formLogin().loginPage("/showLoginPage")
-				.loginProcessingUrl("/authenticateTheUser").permitAll().and().logout().permitAll();
+		http.authorizeRequests().antMatchers("/").hasRole("EMPLOYEE").antMatchers("/leaders/**").hasRole("MANAGER")
+				.antMatchers("/systems/**").hasRole("ADMIN")
+				.and().formLogin().loginPage("/showLoginPage")
+				.loginProcessingUrl("/authenticateTheUser").permitAll().and().logout().permitAll().and()
+				.exceptionHandling().accessDeniedPage("/access-denied");
 
 	}
 
